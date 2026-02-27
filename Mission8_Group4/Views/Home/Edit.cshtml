@@ -1,0 +1,65 @@
+@model Mission8_Group4.Models.Task
+
+@{
+    ViewData["Title"] = "Edit Task";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h2 class="mb-4">Edit Task</h2>
+
+    <form asp-action="Edit" method="post">
+
+        <!-- Required: Preserve the Task ID -->
+        <input type="hidden" asp-for="id" />
+
+        <!-- Task Name -->
+        <div class="mb-3">
+            <label asp-for="name" class="form-label">Task</label>
+            <input asp-for="name" class="form-control" />
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+
+        <!-- Due Date -->
+        <div class="mb-3">
+            <label asp-for="dueDate" class="form-label">Due Date</label>
+            <input asp-for="dueDate" type="date" class="form-control" />
+        </div>
+
+        <!-- Quadrant -->
+        <div class="mb-3">
+            <label asp-for="quadrant" class="form-label">Quadrant</label>
+            <select asp-for="quadrant" class="form-select">
+                <option value="">Select a quadrant</option>
+                <option value="1">Quadrant I (Important / Urgent)</option>
+                <option value="2">Quadrant II (Important / Not Urgent)</option>
+                <option value="3">Quadrant III (Not Important / Urgent)</option>
+                <option value="4">Quadrant IV (Not Important / Not Urgent)</option>
+            </select>
+            <span asp-validation-for="quadrant" class="text-danger"></span>
+        </div>
+
+        <!-- Category Dropdown -->
+        <div class="mb-3">
+            <label asp-for="categoryId" class="form-label">Category</label>
+            <select asp-for="categoryId"
+                    asp-items="ViewBag.Categories"
+                    class="form-select">
+                <option value="">Select a category</option>
+            </select>
+            <span asp-validation-for="categoryId" class="text-danger"></span>
+        </div>
+
+        <!-- Completed Checkbox -->
+        <div class="form-check mb-3">
+            <input asp-for="completed" class="form-check-input" />
+            <label asp-for="completed" class="form-check-label">
+                Completed
+            </label>
+        </div>
+
+        <!-- Buttons -->
+        <button type="submit" class="btn btn-success">Save Changes</button>
+        <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div>
