@@ -1,5 +1,28 @@
+## Build output
 bin/
 obj/
 /packages/
-riderModule.iml
+
+## JetBrains Rider
+.idea/
+*.iml
 /_ReSharper.Caches/
+
+## User-specific settings
+*.user
+*.suo
+*.userprefs
+
+## SQLite databases
+*.db
+*.db-shm
+*.db-wal
+
+## ASP.NET Core
+appsettings.*.json
+!appsettings.json
+!appsettings.Development.json
+
+## OS files
+.DS_Store
+Thumbs.db
