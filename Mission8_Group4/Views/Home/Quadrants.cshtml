@@ -25,10 +25,14 @@
                 <ul class="list-unstyled">
                     @foreach (var task in Model.Where(t => t.quadrant == 1))
                     {
-                        <li class="p-2 border-bottom border-light">
-                            @task.name
-                            <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@task.id">Edit</a>
-                            <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@task.id">Delete</a>
+                        <li class="quadrant-task p-2 border-bottom border-light">
+                            <span class="task-name">@task.name</span>
+                            <div class="task-actions">
+                                <a class="btn btn-task-edit btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@task.id">Edit</a>
+                                <form asp-controller="Home" asp-action="Delete" asp-route-id="@task.id" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-task-delete btn-sm">Delete</button>
+                                </form>
+                            </div>
                         </li>
                     }
                 </ul>
@@ -38,10 +42,14 @@
                 <ul class="list-unstyled">
                     @foreach (var task in Model.Where(t => t.quadrant == 2))
                     {
-                        <li class="p-2 border-bottom border-light">
-                            @task.name
-                            <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@task.id">Edit</a>
-                            <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@task.id">Delete</a>
+                        <li class="quadrant-task p-2 border-bottom border-light">
+                            <span class="task-name">@task.name</span>
+                            <div class="task-actions">
+                                <a class="btn btn-task-edit btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@task.id">Edit</a>
+                                <form asp-controller="Home" asp-action="Delete" asp-route-id="@task.id" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-task-delete btn-sm">Delete</button>
+                                </form>
+                            </div>
                         </li>
                     }
                 </ul>
@@ -57,10 +65,14 @@
                 <ul class="list-unstyled">
                     @foreach (var task in Model.Where(t => t.quadrant == 3))
                     {
-                        <li class="p-2 border-bottom border-light">
-                            @task.name
-                            <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@task.id">Edit</a>
-                            <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@task.id">Delete</a>
+                        <li class="quadrant-task p-2 border-bottom border-light">
+                            <span class="task-name">@task.name</span>
+                            <div class="task-actions">
+                                <a class="btn btn-task-edit btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@task.id">Edit</a>
+                                <form asp-controller="Home" asp-action="Delete" asp-route-id="@task.id" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-task-delete btn-sm">Delete</button>
+                                </form>
+                            </div>
                         </li>
 
                     }
@@ -71,10 +83,14 @@
                 <ul class="list-unstyled">
                     @foreach (var task in Model.Where(t => t.quadrant == 4))
                     {
-                        <li class="p-2 border-bottom border-light">
-                            @task.name
-                            <a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@task.id">Edit</a>
-                            <a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@task.id">Delete</a>
+                        <li class="quadrant-task p-2 border-bottom border-light">
+                            <span class="task-name">@task.name</span>
+                            <div class="task-actions">
+                                <a class="btn btn-task-edit btn-sm" asp-controller="Home" asp-action="Edit" asp-route-id="@task.id">Edit</a>
+                                <form asp-controller="Home" asp-action="Delete" asp-route-id="@task.id" method="post" class="d-inline">
+                                    <button type="submit" class="btn btn-task-delete btn-sm">Delete</button>
+                                </form>
+                            </div>
                         </li>
                     }
                 </ul>
